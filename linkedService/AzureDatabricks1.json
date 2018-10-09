@@ -8,7 +8,7 @@
 			"newClusterNodeType": "Standard_D3_v2",
 			"newClusterNumOfWorker": "1",
 			"newClusterVersion": "4.3.x-scala2.11",
-			"encryptedCredential": "xxzzzzzzzzzzzzzzz"
+			"encryptedCredential": "xxxx"
 		}
 	}
 }
