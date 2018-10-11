@@ -1,11 +1,9 @@
 {
 	"name": "pipeline1",
 	"properties": {
-		"description": "this is new update",
 		"activities": [
 			{
 				"name": "Notebook1",
-				"description": "This notebook is for sales tables",
 				"type": "DatabricksNotebook",
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -24,7 +22,6 @@
 			},
 			{
 				"name": "Notebook2",
-				"description": "this notebook is being used for sql tables",
 				"type": "DatabricksNotebook",
 				"dependsOn": [
 					{
