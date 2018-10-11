@@ -6,10 +6,6 @@
 			"type": "string",
 			"metadata": "Data Factory Name",
 			"defaultValue": "ADFtestingfordatabricks"
-		},
-		"AzureDatabricks1_accessToken": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
 		}
 	},
 	"variables": {
@@ -25,7 +21,6 @@
 					{
 						"name": "Notebook1",
 						"type": "DatabricksNotebook",
-						"dependsOn": [],
 						"policy": {
 							"timeout": "7.00:00:00",
 							"retry": 0,
@@ -33,7 +28,6 @@
 							"secureOutput": false,
 							"secureInput": false
 						},
-						"userProperties": [],
 						"typeProperties": {
 							"notebookPath": "/Users/ananda.samal@hotmail.com/2018-10-09 - DBFS Example"
 						},
@@ -60,7 +54,6 @@
 							"secureOutput": false,
 							"secureInput": false
 						},
-						"userProperties": [],
 						"typeProperties": {
 							"notebookPath": "/Users/ananda.samal@hotmail.com/2018-10-06 - DBFS Example"
 						},
@@ -69,32 +62,8 @@
 							"type": "LinkedServiceReference"
 						}
 					}
-				],
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureDatabricks1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureDatabricks1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureDatabricks",
-				"typeProperties": {
-					"domain": "https://eastus.azuredatabricks.net",
-					"accessToken": {
-						"type": "SecureString",
-						"value": "[parameters('AzureDatabricks1_accessToken')]"
-					},
-					"newClusterNodeType": "Standard_D3_v2",
-					"newClusterNumOfWorker": "1",
-					"newClusterVersion": "4.3.x-scala2.11"
-				}
-			},
-			"dependsOn": []
+				]
+			}
 		}
 	]
 }
