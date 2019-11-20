@@ -1,0 +1,25 @@
+{
+	"name": "twitter-trigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "poc_pipeline",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/test/blobs/",
+			"blobPathEndsWith": "'.txt'",
+			"ignoreEmptyBlobs": false,
+			"scope": "/subscriptions/b88946d0-b282-4030-8066-a45d6afe0fca/resourceGroups/Test_POC/providers/Microsoft.Storage/storageAccounts/pocusecase",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
